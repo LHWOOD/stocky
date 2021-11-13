@@ -1,3 +1,50 @@
-let stuff = "yo";
+const userForm = document.querySelector("#submitForm");
+const symbolic = document.querySelector("#symbol");
 
-console.log(stuff);
+const button = document.querySelector("#btn");
+
+const inputHandler = function (event) {
+  event.preventDefault();
+  let stock = symbolic.value;
+  console.log(stock);
+  getStock(stock);
+};
+
+function getStock(stock) {
+  const requestUrl =
+    "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
+    stock +
+    "&apikey=DU7T0IAOA31JGVC6";
+  fetch(requestUrl)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    });
+}
+
+userForm.addEventListener("submit", inputHandler);
+
+// button.addEventListener("submit", function (event) {
+//   event.preventDefault();
+//   console.log(button);
+//   fetch(
+//     "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
+//       symbolic +
+//       "&apikey=DU7T0IAOA31JGVC6",
+//     {
+//       headers: {
+//         Accept: "application/json",
+//       },
+//     }
+//   )
+//     .then(function (response) {
+//       return response.json();
+//     })
+//     .then(function (data) {
+//       console.log(data);
+//     });
+// });
+
+//DU7T0IAOA31JGVC6
