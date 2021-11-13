@@ -1,6 +1,6 @@
 const userForm = document.querySelector("#submitForm");
 const symbolic = document.querySelector("#symbol");
-
+const spot = document.querySelector("#stuff");
 const button = document.querySelector("#btn");
 
 const inputHandler = function (event) {
@@ -21,6 +21,10 @@ function getStock(stock) {
     })
     .then(function (data) {
       console.log(data);
+
+      let quote = document.createElement("p");
+      quote.textContent = data.GlobalQuote[0];
+      spot.appendChild(quote);
     });
 }
 
