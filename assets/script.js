@@ -22,8 +22,10 @@ function getStock(stock) {
     .then(function (data) {
       console.log(data);
 
-      let quote = document.createElement("p");
-      quote.textContent = data.GlobalQuote[0];
+      console.log(typeof data);
+
+      let quote = document.createElement("li");
+      quote.textContent = data.GlobalQuote.price;
       spot.appendChild(quote);
     });
 }
