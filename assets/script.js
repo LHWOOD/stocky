@@ -25,7 +25,8 @@ function getStock(stock) {
       console.log(typeof data);
 
       let quote = document.createElement("li");
-      quote.textContent = GlobalQuote.price;
+      quote.textContent = data;
+      quote.setAttribute("style", "color: red");
       spot.appendChild(quote);
     });
 }
