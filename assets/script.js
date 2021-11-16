@@ -19,13 +19,13 @@ function getStock(stock) {
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data);
+    .then(function (GlobalQuote) {
+      console.log(GlobalQuote);
 
-      console.log(typeof data);
+      // console.log(typeof data);
 
       let quote = document.createElement("li");
-      quote.textContent = data(1);
+      quote.textContent = GlobalQuote.low;
       quote.setAttribute("style", "color: red");
       spot.appendChild(quote);
     });
