@@ -25,7 +25,7 @@ function getStock(stock) {
       console.log(typeof data);
 
       let quote = document.createElement("li");
-      quote.textContent = data;
+      quote.textContent = data(1);
       quote.setAttribute("style", "color: red");
       spot.appendChild(quote);
     });
@@ -55,3 +55,5 @@ userForm.addEventListener("submit", inputHandler);
 // });
 
 //DU7T0IAOA31JGVC6
+
+// "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=DU7T0IAOA31JGVC6";
