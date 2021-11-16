@@ -12,20 +12,23 @@ const inputHandler = function (event) {
 
 function getStock(stock) {
   const requestUrl =
-    "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
+    // "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
+    // stock +
+    // "&apikey=DU7T0IAOA31JGVC6";
+    "http://api.marketstack.com/v1/eod?access_key=b395558c86cf430804ab57d9be723e92&symbols=" +
     stock +
-    "&apikey=DU7T0IAOA31JGVC6";
+    "&sort=DESC&date_from=2021-11-15&date_to=2021-11-16&limit=1";
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
     })
-    .then(function (data) {
-      console.log(data);
+    .then(function (yo) {
+      console.log(yo);
 
-      console.log(typeof data);
+      console.log(typeof yo);
 
       let quote = document.createElement("li");
-      quote.textContent = data.Global_Quote;
+      quote.textContent = yo.data;
       quote.setAttribute("style", "color: red");
       spot.appendChild(quote);
     });
