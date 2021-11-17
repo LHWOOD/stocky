@@ -29,7 +29,7 @@ function getStock(stock) {
 
       let quote = document.createElement("li");
       quote.textContent = yo.data;
-      quote.setAttribute("style", "color: red");
+      quote.setAttribute("style", "color: green");
       spot.appendChild(quote);
     });
 }
