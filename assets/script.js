@@ -27,7 +27,7 @@ function getStock(stock) {
 
       console.log(typeof yo);
 
-      let quote = document.createElement("li");
+      let quote = document.createElement("p");
       quote.textContent = yo.data;
       quote.setAttribute("style", "color: green");
       spot.appendChild(quote);
