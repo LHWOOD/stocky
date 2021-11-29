@@ -12,12 +12,12 @@ const inputHandler = function (event) {
 
 function getStock(stock) {
   const requestUrl =
-    // "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
-    // stock +
-    // "&apikey=DU7T0IAOA31JGVC6";
-    "http://api.marketstack.com/v1/eod?access_key=b395558c86cf430804ab57d9be723e92&symbols=" +
+    "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
     stock +
-    "&sort=DESC&date_from=2021-11-15&date_to=2021-11-16&limit=1";
+    "&apikey=DU7T0IAOA31JGVC6";
+  // "http://api.marketstack.com/v1/eod?access_key=b395558c86cf430804ab57d9be723e92&symbols=" +
+  // stock +
+  // "&sort=DESC&date_from=2021-11-15&date_to=2021-11-16&limit=1";
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -28,7 +28,7 @@ function getStock(stock) {
       console.log(typeof yo);
 
       let quote = document.createElement("p");
-      quote.textContent = yo.data[0].open;
+      quote.textContent = yo.GlobalQuote.change;
       quote.setAttribute("style", "color: green");
       spot.appendChild(quote);
     });
