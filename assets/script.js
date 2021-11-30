@@ -27,6 +27,8 @@ function getStock(stock) {
 
       console.log(typeof yo);
 
+      spot.setAttribute("class", "on");
+
       let low = document.createElement("p");
       let high = document.createElement("p");
       let sym = document.createElement("p");
