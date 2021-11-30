@@ -12,9 +12,6 @@ const inputHandler = function (event) {
 
 function getStock(stock) {
   const requestUrl =
-    // "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
-    // stock +
-    // "&apikey=DU7T0IAOA31JGVC6";
     "http://api.marketstack.com/v1/eod?access_key=b395558c86cf430804ab57d9be723e92&symbols=" +
     stock +
     "&sort=DESC&date_from=2021-11-15&date_to=2021-11-16&limit=1";
@@ -70,3 +67,7 @@ userForm.addEventListener("submit", inputHandler);
 //DU7T0IAOA31JGVC6
 
 // "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=DU7T0IAOA31JGVC6";
+
+// "https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=" +
+// stock +
+// "&apikey=DU7T0IAOA31JGVC6";
