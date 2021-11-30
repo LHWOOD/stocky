@@ -29,12 +29,16 @@ function getStock(stock) {
 
       let low = document.createElement("p");
       let high = document.createElement("p");
+      let sym = document.createElement("p");
       low.textContent = yo.data[0].low;
       high.textContent = yo.data[0].high;
+      sym.textContent = yo.data[0].symbol;
       low.setAttribute("style", "color: green");
       high.setAttribute("style", "color: green");
+      sym.setAttribute("style", "color: green");
       spot.appendChild(low);
       spot.appendChild(high);
+      spot.appendChild(sym);
     });
 }
 
