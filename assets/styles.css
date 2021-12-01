@@ -1,16 +1,17 @@
 body {
-  background-color: rgb(136, 125, 125);
+  background-color: rgb(100, 95, 95);
   /* display: flex; */
 }
 .on {
   border: solid black 2px;
   border-radius: 2px;
   box-shadow: rgb(71, 68, 68) 2px 2px;
-  margin: 25px;
+  margin: 15px;
   display: flex;
   /* justify-content: center; */
   justify-content: space-around;
   align-items: center;
   padding-left: 5px;
-  background-color: rgb(180, 136, 136);
+
+  background-color: rgb(124, 194, 185);
 }

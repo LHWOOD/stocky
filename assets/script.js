@@ -36,7 +36,7 @@ function getStock(stock) {
       low.textContent = "Low: " + yo.data[0].low;
       high.textContent = "High: " + yo.data[0].high;
       close.textContent = "Close: " + yo.data[0].close;
-      sym.textContent = "Symbol: " + yo.data[0].symbol;
+      sym.textContent = "Symbol:  " + yo.data[0].symbol;
 
       newDiv.setAttribute("class", "on");
       low.setAttribute("style", "color: red");
