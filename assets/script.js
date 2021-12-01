@@ -30,21 +30,24 @@ function getStock(stock) {
 
       let low = document.createElement("p");
       let high = document.createElement("p");
-      let sym = document.createElement("p");
+      let close = document.createElement("p");
+      let sym = document.createElement("h4");
 
       low.textContent = "Low: " + yo.data[0].low;
       high.textContent = "High: " + yo.data[0].high;
+      close.textContent = "Close: " + yo.data[0].close;
       sym.textContent = "Symbol: " + yo.data[0].symbol;
 
       newDiv.setAttribute("class", "on");
-      low.setAttribute("style", "color: green");
+      low.setAttribute("style", "color: red");
       high.setAttribute("style", "color: green");
-      sym.setAttribute("style", "color: green");
+      sym.setAttribute("style", "color: black");
 
       spot.append(newDiv);
       newDiv.appendChild(sym);
       newDiv.appendChild(low);
       newDiv.appendChild(high);
+      newDiv.appendChild(close);
 
       document.querySelector("#submitForm").reset();
     });
