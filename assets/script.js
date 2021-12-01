@@ -24,20 +24,29 @@ function getStock(stock) {
 
       console.log(typeof yo);
 
-      spot.setAttribute("class", "on");
+      // spot.setAttribute("class", "on");
+
+      let newDiv = document.createElement("div");
 
       let low = document.createElement("p");
       let high = document.createElement("p");
       let sym = document.createElement("p");
+
       low.textContent = "Low: " + yo.data[0].low;
       high.textContent = "High: " + yo.data[0].high;
       sym.textContent = "Symbol: " + yo.data[0].symbol;
+
+      newDiv.setAttribute("class", "on");
       low.setAttribute("style", "color: green");
       high.setAttribute("style", "color: green");
       sym.setAttribute("style", "color: green");
-      spot.appendChild(sym);
-      spot.appendChild(low);
-      spot.appendChild(high);
+
+      spot.append(newDiv);
+      newDiv.appendChild(sym);
+      newDiv.appendChild(low);
+      newDiv.appendChild(high);
+
+      document.querySelector("#submitForm").reset();
     });
 }
 
