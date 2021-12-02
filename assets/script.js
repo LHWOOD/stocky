@@ -5,16 +5,17 @@ const button = document.querySelector("#btn");
 
 const inputHandler = function (event) {
   event.preventDefault();
-  let stock = symbolic.value;
-  console.log(stock);
-  getStock(stock);
+  // let stock = symbolic.value;
+  // console.log(stock);
+  getStock();
 };
 
-function getStock(stock) {
+function getStock() {
   const requestUrl =
-    "http://api.marketstack.com/v1/eod?access_key=b395558c86cf430804ab57d9be723e92&symbols=" +
-    stock +
-    "&sort=DESC&date_from=2021-11-15&date_to=2021-11-16&limit=1";
+    "https://api.polygon.io/v2/aggs/ticker/AAPL/prev?adjusted=true&apiKey=okaVnbWfqMBm3CzUkKubKirAUIHiOtv4";
+  // "http://api.marketstack.com/v1/eod?access_key=b395558c86cf430804ab57d9be723e92&symbols=" +
+  // stock +
+  // "&sort=DESC&date_from=2021-11-15&date_to=2021-11-16&limit=1";
   fetch(requestUrl)
     .then(function (response) {
       return response.json();
@@ -28,32 +29,39 @@ function getStock(stock) {
 
       let newDiv = document.createElement("div");
 
-      let low = document.createElement("p");
-      let high = document.createElement("p");
-      let close = document.createElement("p");
+      // let low = document.createElement("p");
+      // let high = document.createElement("p");
+      // let close = document.createElement("p");
       let sym = document.createElement("h4");
 
-      low.textContent = "Low: " + yo.data[0].low;
-      high.textContent = "High: " + yo.data[0].high;
-      close.textContent = "Close: " + yo.data[0].close;
-      sym.textContent = "Symbol:  " + yo.data[0].symbol;
+      // low.textContent = "Low: " + yo.data[0].low;
+      // high.textContent = "High: " + yo.data[0].high;
+      // close.textContent = "Close: " + yo.data[0].close;
+      sym.textContent = "Symbol:  " + yo.results[0].T;
 
       newDiv.setAttribute("class", "on");
-      low.setAttribute("style", "color: red");
-      high.setAttribute("style", "color: green");
+      // low.setAttribute("style", "color: red");
+      // high.setAttribute("style", "color: green");
       sym.setAttribute("style", "color: black");
 
       spot.append(newDiv);
       newDiv.appendChild(sym);
-      newDiv.appendChild(low);
-      newDiv.appendChild(high);
-      newDiv.appendChild(close);
+      // newDiv.appendChild(low);
+      // newDiv.appendChild(high);
+      // newDiv.appendChild(close);
 
       document.querySelector("#submitForm").reset();
     });
 }
 
-userForm.addEventListener("submit", inputHandler);
+userForm.addEventListener("click", inputHandler);
+
+//polygon.io
+//okaVnbWfqMBm3CzUkKubKirAUIHiOtv4
+
+//c6kkik2ad3i9v4j449a0
+
+//c6kkik2ad3i9v4j449a0
 
 // button.addEventListener("submit", function (event) {
 //   event.preventDefault();
