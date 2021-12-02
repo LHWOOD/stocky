@@ -5,14 +5,16 @@ const button = document.querySelector("#btn");
 
 const inputHandler = function (event) {
   event.preventDefault();
-  // let stock = symbolic.value;
-  // console.log(stock);
-  getStock();
+  let stock = symbolic.value;
+  console.log(stock);
+  getStock(stock);
 };
 
-function getStock() {
+function getStock(stock) {
   const requestUrl =
-    "https://api.polygon.io/v2/aggs/ticker/AAPL/prev?adjusted=true&apiKey=okaVnbWfqMBm3CzUkKubKirAUIHiOtv4";
+    "https://api.polygon.io/v2/aggs/ticker/" +
+    stock +
+    "/prev?adjusted=true&apiKey=okaVnbWfqMBm3CzUkKubKirAUIHiOtv4";
   // "http://api.marketstack.com/v1/eod?access_key=b395558c86cf430804ab57d9be723e92&symbols=" +
   // stock +
   // "&sort=DESC&date_from=2021-11-15&date_to=2021-11-16&limit=1";
@@ -54,7 +56,7 @@ function getStock() {
     });
 }
 
-userForm.addEventListener("click", inputHandler);
+userForm.addEventListener("submit", inputHandler);
 
 //polygon.io
 //okaVnbWfqMBm3CzUkKubKirAUIHiOtv4
