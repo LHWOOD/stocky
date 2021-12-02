@@ -12,6 +12,7 @@ body {
   margin-left: 15px; */
   display: flex;
   margin: 8px;
+  margin-left: 3px;
   /* justify-content: center; */
   justify-content: space-around;
   align-items: center;
@@ -34,4 +35,7 @@ body {
 #symbol {
   border-radius: 2px;
   border: black 1px;
+}
+h4 {
+  padding-left: 10px;
 }
