@@ -25,34 +25,39 @@ function getStock(stock) {
     .then(function (yo) {
       console.log(yo);
 
-      console.log(typeof yo);
+      console.log(yo.queryCount);
 
-      // spot.setAttribute("class", "on");
+      if (yo.queryCount === 0) {
+        window.alert("Not a valid Stock Symbol. Please try again.");
+        document.querySelector("#submitForm").reset();
+      } else {
+        // spot.setAttribute("class", "on");
 
-      let newDiv = document.createElement("div");
+        let newDiv = document.createElement("div");
 
-      let low = document.createElement("p");
-      let high = document.createElement("p");
-      let close = document.createElement("p");
-      let sym = document.createElement("h4");
+        let low = document.createElement("p");
+        let high = document.createElement("p");
+        let close = document.createElement("p");
+        let sym = document.createElement("h4");
 
-      low.textContent = "Low: " + yo.results[0].l;
-      high.textContent = "High: " + yo.results[0].h;
-      close.textContent = "Close: " + yo.results[0].c;
-      sym.textContent = "Symbol:  " + yo.results[0].T;
+        low.textContent = "Low: " + yo.results[0].l;
+        high.textContent = "High: " + yo.results[0].h;
+        close.textContent = "Close: " + yo.results[0].c;
+        sym.textContent = "Symbol:  " + yo.results[0].T;
 
-      newDiv.setAttribute("class", "on");
-      low.setAttribute("style", "color: red");
-      high.setAttribute("style", "color: green");
-      sym.setAttribute("style", "color: black");
+        newDiv.setAttribute("class", "on");
+        low.setAttribute("style", "color: red");
+        high.setAttribute("style", "color: green");
+        sym.setAttribute("style", "color: black");
 
-      spot.append(newDiv);
-      newDiv.appendChild(sym);
-      newDiv.appendChild(low);
-      newDiv.appendChild(high);
-      newDiv.appendChild(close);
+        spot.append(newDiv);
+        newDiv.appendChild(sym);
+        newDiv.appendChild(low);
+        newDiv.appendChild(high);
+        newDiv.appendChild(close);
 
-      document.querySelector("#submitForm").reset();
+        document.querySelector("#submitForm").reset();
+      }
     });
 }
 
