@@ -5,7 +5,7 @@ const button = document.querySelector("#btn");
 
 const inputHandler = function (event) {
   event.preventDefault();
-  let stock = symbolic.value;
+  let stock = symbolic.value.trim().toUpperCase();
   console.log(stock);
   getStock(stock);
 };
